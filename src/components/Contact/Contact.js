@@ -1,6 +1,19 @@
+import emailjs from 'emailjs-com';
 import React from 'react';
 
 const Contact = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('gmail', 'template_yvhr4oa', e.target, 'user_j0QZ1oSurflurR7Rikj2d')
+        .then((result) => {
+            alert("message sent successfully");
+        }, (error) => {
+            alert("please try again");
+        }); 
+        e.target.reset()
+    }
+
     return (
         <div class="w3-white w3-margin py-4">
             <div class="w3-container w3-padding w3-black">
@@ -8,10 +21,15 @@ const Contact = () => {
             </div>
             <div class="w3-container w3-white">
                 <p className="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, blanditiis?</p>
-                <p><input class="w3-input w3-border" type="text" placeholder="Your Name" style={{width:'100%'}} /></p>
-                <p><input class="w3-input w3-border" type="email" placeholder="Your Email" style={{width:'100%'}} /></p>
-                <p><textarea class="w3-input w3-border" type="text" placeholder="Your Message" style={{width:'100%'}} /></p>
-                <p><button type="button" class="w3-button w3-block w3-red">Send</button></p>
+                <form onSubmit={handleSubmit}>
+                    <input class="w3-input w3-border" name="name" type="text" placeholder="Your Name" style={{width:'100%'}} required/>
+                    <br />
+                    <input class="w3-input w3-border" name="email" type="email" placeholder="Your Email" style={{width:'100%'}} required/>
+                    <br />
+                    <textarea class="w3-input w3-border" name="message" type="text" placeholder="Your Message" style={{width:'100%'}} required/>
+                    <br />
+                    <button type="submit" class="w3-button w3-block w3-red" value="Send">Send</button>
+                </form>
             </div>
         </div>
     );
