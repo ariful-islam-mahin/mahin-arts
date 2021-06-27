@@ -14,7 +14,7 @@ const PostItem = ({post}) => {
             <div class="w3-container">
                 <div class="w3-row">
                     <div class="w3-col m8 s12">
-                        <p><a href={link} style={{background:"#f44336", color:'white'}} class="w3-button  w3-padding-large w3-border "><b>VIEW POST »</b></a></p>
+                        <p><a href={link} style={{background:"#f44336", color:'white'}} class="w3-button w3-padding w3-border "><b>VIEW POST »</b></a></p>
                     </div>
                 </div>
             </div>
