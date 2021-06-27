@@ -1,47 +1,22 @@
 import React from 'react';
 
 const PostItem = ({post}) => {
-    const {image1, image2, image3, link, date} = post;
+    const {image, link, date, id, userName} = post;
 
     return (
-        <div class="w3-container w3-white w3-margin w3-padding-large">
-            <div class="w3-center">
-            <h3>TITLE HEADING</h3>
-            <h5>Title description, <span class="w3-opacity">{date}</span></h5>
+        <div class="shadow my-5 pt-4 w3-margin w3-white">
+                <img src={image} alt="Nature" style={{width:"100%"}}/>
+            <div class="w3-container my-3">
+                <h4><b>Sketch of </b><a href={id} target="_blank" class="w3-tag w3-medium my-auto" >{userName}</a></h4>
+                <h5><span class="w3-opacity">{date}</span></h5>
             </div>
 
-            <div class="w3-justify">
-            {/* <img src={image} alt="Girl Hat" style={{width:"100%"}} class="w3-padding-16"/> */}
-
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src={image1} alt="First slide"/>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src={image2} alt="Second slide"/>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src={image3} alt="Third slide"/>
+            <div class="w3-container">
+                <div class="w3-row">
+                    <div class="w3-col m8 s12">
+                        <p><a href={link} style={{background:"#f44336", color:'white'}} class="w3-button  w3-padding-large w3-border "><b>VIEW POST »</b></a></p>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-
-            <p><strong>More Hats!</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia consectetur aliquam blanditiis modi commodi praesentium dolorem aut hic quibusdam dolorum.</p>
-            <p class="w3-left"><a href={link} target="_blank" class="w3-button w3-black" ><b>View Post</b></a></p>
             </div>
         </div>
     );

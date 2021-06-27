@@ -16,7 +16,6 @@ function App () {
       <HeaderMain></HeaderMain>
       <div style={{maxWidth: "885px", margin: "0px auto"}}>
         <Posts></Posts>
-        <About></About>
         <FollowMe></FollowMe>
         <Contact></Contact>
       </div>

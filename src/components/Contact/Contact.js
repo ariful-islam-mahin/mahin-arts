@@ -15,12 +15,11 @@ const Contact = () => {
     }
 
     return (
-        <div class="w3-white w3-margin py-4">
+        <div class="w3-white my-4 w3-margin py-4">
             <div class="w3-container w3-padding w3-black">
                 <h4>Contact</h4>
             </div>
-            <div class="w3-container w3-white">
-                <p className="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, blanditiis?</p>
+            <div class="w3-container pt-4 w3-white">
                 <form onSubmit={handleSubmit}>
                     <input class="w3-input w3-border" name="name" type="text" placeholder="Your Name" style={{width:'100%'}} required/>
                     <br />
